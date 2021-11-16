@@ -1,6 +1,6 @@
 # PruebaIniciacion
 
-Viva España viva el Rey, viva el orden y la ley
+Mi primer repositorio.
 
 Carlos Monerris Lupión / 2o DAM
 
