@@ -5,39 +5,47 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+
+@AndroidEntryPoint
 
 class MainActivity : AppCompatActivity() {
 
+    @Inject
+    lateinit var log: PersonalLog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-            Log.d("Carlos", "Se ha creado una actividad")
+        log.log("onCreate")
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        Log.d("Carlos","Se ha modificado la configuración")
+        log.log("ConfigurationChanged")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d("Carlos","Se ha modificado la configuración")
+        log.log("onStart")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d("Carlos","La actividad ha salido del estado visible")
+        log.log("onStop")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d("Carlos","La actividad ya no está en primer plano")
+        log.log("onPause")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Carlos","La actividad se ha destruido")
+        log.log("onDestroy")
     }
+
+
 
 }
